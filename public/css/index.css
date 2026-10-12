@@ -1,63 +1,171 @@
-html, body{
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  height:100%;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Noto Sans JP", "Meiryo", sans-serif;
+  background-color: #f4f7fb;
+  color: #1e293b;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-.top{
+
+.top {
+  position: relative;
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(15, 41, 77, 0.65) 0%,
+      rgba(30, 88, 158, 0.45) 100%
+    ),
+    url(images/top.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+}
+
+.top-inner {
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-
-  border-radius: 0.5em;
-	padding:0.5em;
-	background-image: url(images/top.jpg);
-	background-size: cover;
-	background-position: center;
-
-	text-decoration: none;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	text-shadow: 1px 1px 0 #000;
-	color: white;
-	white-space: nowrap;
-
+  gap: 1.25rem;
 }
-.top div{
-  font-size: 3em;
+
+.top img {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
-.top img{
-  height:4em;
-  margin: 0.5em;
-}
-.contents-table{
-  flex:1;
+
+.top-title {
   display: flex;
-  overflow: auto;
-  align-items: center;
   flex-direction: column;
 }
-.contents-table > div{
-  display: flex;
-  align-items:stretch;
-  flex-direction: column;
 
+.site-name {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.contents{
-  font-family: 'Courier New', Courier, monospace;
+.site-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contents-table {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.contents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
-  margin: 2em;
-  padding:1em;
-  color:white;
-  border: rgb(43, 97, 212) solid 0.2em;
-  background-color: rgb(42, 90, 148);
-  border-radius: 2em;
+  padding: 1.75rem;
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid #2b6cb0;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.05),
+    0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
-.contents:hover{
-  background-color: rgb(58, 127, 211);
+
+.contents:hover,
+.contents:focus-visible {
+  transform: translateY(-4px);
+  border-color: #3182ce;
+  border-top-color: #3182ce;
+  box-shadow:
+    0 12px 24px -4px rgba(30, 64, 175, 0.14),
+    0 4px 8px -2px rgba(30, 64, 175, 0.08);
+  outline: none;
 }
-.contents :first-child{
-  font-size: 160%;
-  border-bottom: dashed;
+
+.contents h1 {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 1px solid #f1f5f9;
+  line-height: 1.35;
 }
-.contents :nth-child(2){
-  margin: 0.5em;
+
+.contents p {
+  margin: 0 0 1.25rem;
+  flex: 1;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.contents-url {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  transition: transform 0.2s ease;
+}
+
+.contents:hover .contents-url {
+  transform: translateX(4px);
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #64748b;
+  font-size: 0.85rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .top {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .top img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .contents-table {
+    padding: 1.5rem 1rem;
+  }
 }

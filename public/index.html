@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
-    <script type="text/javascript" src="bundle.js"></script>
     <link rel="stylesheet" href="./css/index.css" />
     <script
       defer=""
@@ -39,25 +38,37 @@
   </head>
 
   <body>
-    <div class="top">
-      <img src="css/images/logo.svg" />
-      <div>空雲開発</div>
-    </div>
-    <div class="contents-table">
-      <div>
+    <header class="top">
+      <div class="top-inner">
+        <img src="css/images/logo.svg" alt="空雲開発 ロゴ" />
+        <div class="top-title">
+          <div class="site-name">空雲開発</div>
+          <p class="site-subtitle">Web Services &amp; Technical Reference</p>
+        </div>
+      </div>
+    </header>
+    <main class="contents-table">
+      <div class="contents-grid">
         <a class="contents" href="https://it.lerning.croud.jp/">
           <h1>IT Master</h1>
           <p>情報処理技術者試験 過去問演習システム</p>
+          <span class="contents-url">it.lerning.croud.jp →</span>
         </a>
         <a class="contents" href="https://novel-creator.croud.jp/">
           <h1>ノベクリ - Novel Creator</h1>
           <p>AI小説創作・公開プラットフォーム</p>
+          <span class="contents-url">novel-creator.croud.jp →</span>
         </a>
         <a class="contents" href="https://next-blog.croud.jp/">
           <h1>空雲リファレンス</h1>
           <p>プログラム系技術情報</p>
+          <span class="contents-url">next-blog.croud.jp →</span>
         </a>
       </div>
-    </div>
+    </main>
+    <footer class="footer">
+      <small>&copy; 空雲開発 (croud.jp)</small>
+    </footer>
   </body>
 </html>
+
