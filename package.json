@@ -1,0 +1,15 @@
+{
+  "name": "croud.jp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cf dev",
+    "deploy": "cf deploy"
+  },
+  "devDependencies": {
+    "cf": "1.0.0-beta.14",
+    "wrangler": "^4.149.0"
+  }
+}
